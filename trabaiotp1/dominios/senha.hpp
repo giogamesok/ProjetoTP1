@@ -1,0 +1,6 @@
+#ifndef SENHA_HPP_INCLUDED
+#define SENHA_HPP_INCLUDED
+
+
+
+#endif // SENHA_HPP_INCLUDED

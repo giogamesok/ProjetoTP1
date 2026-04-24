@@ -1,0 +1,6 @@
+#ifndef EMAIL_HPP_INCLUDED
+#define EMAIL_HPP_INCLUDED
+
+
+
+#endif // EMAIL_HPP_INCLUDED

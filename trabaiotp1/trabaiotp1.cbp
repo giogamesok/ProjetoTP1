@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="trabaiotp1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/trabaiotp1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/trabaiotp1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="dominios/EMAIL.cpp" />
+		<Unit filename="dominios/EMAIL.hpp" />
+		<Unit filename="dominios/codigo.cpp" />
+		<Unit filename="dominios/codigo.hpp" />
+		<Unit filename="dominios/data.cpp" />
+		<Unit filename="dominios/data.hpp" />
+		<Unit filename="dominios/estado.cpp" />
+		<Unit filename="dominios/estado.hpp" />
+		<Unit filename="dominios/hmm.hpp" />
+		<Unit filename="dominios/nome.cpp" />
+		<Unit filename="dominios/nome.hpp" />
+		<Unit filename="dominios/papel.cpp" />
+		<Unit filename="dominios/papel.hpp" />
+		<Unit filename="dominios/prioridade.cpp" />
+		<Unit filename="dominios/prioridade.hpp" />
+		<Unit filename="dominios/senha.cpp" />
+		<Unit filename="dominios/senha.hpp" />
+		<Unit filename="dominios/tempo.cpp" />
+		<Unit filename="dominios/tempo.hpp" />
+		<Unit filename="dominios/texto.cpp" />
+		<Unit filename="dominios/texto.hpp" />
+		<Unit filename="entidades/historia_de_usuario.cpp" />
+		<Unit filename="entidades/historia_de_usuario.hpp" />
+		<Unit filename="entidades/pessoa.cpp" />
+		<Unit filename="entidades/pessoa.hpp" />
+		<Unit filename="entidades/plano_de_sprint.cpp" />
+		<Unit filename="entidades/plano_de_sprint.hpp" />
+		<Unit filename="entidades/projeto.cpp" />
+		<Unit filename="entidades/projeto.hpp" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

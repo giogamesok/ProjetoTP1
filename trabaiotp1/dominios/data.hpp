@@ -1,0 +1,6 @@
+#ifndef DATA_HPP_INCLUDED
+#define DATA_HPP_INCLUDED
+
+
+
+#endif // DATA_HPP_INCLUDED

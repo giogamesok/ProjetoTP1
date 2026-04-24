@@ -1,0 +1,6 @@
+#ifndef ESTADO_HPP_INCLUDED
+#define ESTADO_HPP_INCLUDED
+
+
+
+#endif // ESTADO_HPP_INCLUDED

@@ -1,0 +1,6 @@
+#ifndef TEMPO_HPP_INCLUDED
+#define TEMPO_HPP_INCLUDED
+
+
+
+#endif // TEMPO_HPP_INCLUDED
