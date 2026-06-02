@@ -10,7 +10,7 @@ using namespace std;
  * @brief Dominio que representa o estado de uma historia de usuario.
  *
  * Um objeto desta classe armazena um valor textual restrito ao conjunto de estados
- * validos do fluxo de trabalho de uma historia de usuario.
+ * validos do fluxo de trabalho de historia de usuario.
  *
  * Valores aceitos:
  *  - A FAZER
