@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1781035634 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\codigo.cpp
+	"Codigo.hpp"
+	<cctype>
+	<regex>
+
+1781035600 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\codigo.hpp
+	<string>
+	<stdexcept>
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\data.cpp
+	"data.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\data.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\email.cpp
+	"EMAIL.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\email.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\estado.cpp
+	"estado.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\estado.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\nome.cpp
+	"nome.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\nome.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\papel.cpp
+	"papel.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\papel.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\prioridade.cpp
+	"prioridade.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\prioridade.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\senha.cpp
+	"senha.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\senha.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\tempo.cpp
+	"tempo.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\tempo.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\texto.cpp
+	"texto.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\texto.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\historia_de_usuario.cpp
+	"historia_de_usuario.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\historia_de_usuario.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\pessoa.cpp
+	"pessoa.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\pessoa.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\plano_de_sprint.cpp
+	"plano_de_sprint.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\plano_de_sprint.hpp
+
+1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\projeto.cpp
+	"projeto.hpp"
+
+1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\projeto.hpp
+
