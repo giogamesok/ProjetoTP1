@@ -1,27 +1,34 @@
 # depslib dependency file v1.0
-1781035634 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\codigo.cpp
-	"Codigo.hpp"
+1781043447 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\codigo.cpp
+	"codigo.hpp"
 	<cctype>
 	<regex>
 
-1781035600 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\codigo.hpp
+1781043447 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\codigo.hpp
 	<string>
 	<stdexcept>
 
-1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\data.cpp
+1781043447 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\data.cpp
 	"data.hpp"
+	<sstream>
+	<iomanip>
+	<cctype>
 
-1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\data.hpp
+1781043447 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\data.hpp
+	<string>
+	<stdexcept>
 
 1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\email.cpp
 	"EMAIL.hpp"
 
 1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\email.hpp
 
-1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\estado.cpp
+1781043446 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\estado.cpp
 	"estado.hpp"
 
-1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\estado.hpp
+1781043446 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\estado.hpp
+	<string>
+	<stdexcept>
 
 1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\nome.cpp
 	"nome.hpp"
@@ -38,18 +45,23 @@
 
 1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\prioridade.hpp
 
-1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\senha.cpp
+1781043446 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\senha.cpp
 	"senha.hpp"
 
-1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\senha.hpp
+1781043446 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\senha.hpp
+	<string>
+	<stdexcept>
 
 1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\tempo.cpp
 	"tempo.hpp"
 
-1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\tempo.hpp
+1781043446 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\tempo.hpp
+	<string>
+	<stdexcept>
 
-1777000458 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\texto.cpp
+1781043446 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\texto.cpp
 	"texto.hpp"
+	<cctype>
 
 1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\dominios\texto.hpp
 
@@ -72,4 +84,7 @@
 	"projeto.hpp"
 
 1777000458 c:\users\vmont\desktop\trabaiotp1\trabaiotp1\entidades\projeto.hpp
+
+1781043447 source:c:\users\vmont\desktop\trabaiotp1\trabaiotp1\main.cpp
+	<iostream>
 
