@@ -49,7 +49,7 @@ public:
     /**
      * @brief Verifica se uma string representa uma data valida.
      * @param valor String no formato DD/MM/AAAA.
-     * @return true se valida, false caso contrário.
+     * @return true se valida, false caso contrario.
      */
     static bool validar(const std::string& valor);
 };

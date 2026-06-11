@@ -11,7 +11,7 @@
 
 /**
  * @class Codigo
- * @brief Representa um codigo com formato específico: 2 letras maiúsculas + 3 digitos.
+ * @brief Representa um codigo com formato especifico: 2 letras maiusculas + 3 digitos.
  *
  * @details Formato valido: AA999 (ex: AB123). O codigo e imutavel apos definido,
  *          mas pode ser alterado via set desde que o novo valor seja valido.
