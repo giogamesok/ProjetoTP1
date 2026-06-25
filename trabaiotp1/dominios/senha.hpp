@@ -40,7 +40,7 @@ public:
      * @throw invalid_argument Se o valor estiver em formato invalido.
      */
    Senha();
-    Senha(const std::string& valor);  // necessário
+    Senha(const std::string& valor);
     std::string getValor() const;
     void setValor(const std::string& novoValor);
     static bool validar(const std::string& valor);

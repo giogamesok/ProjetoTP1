@@ -35,7 +35,7 @@ void ControladoraPessoa::executarMenu() {
             case 4: atualizar(); break;
             case 5: excluir(); break;
             case 0: break;
-            default: std::cout << "Opção inválida!\n";
+            default: std::cout << "Opcao invalida!\n";
         }
     } while (opcao != 0);
 }
@@ -47,7 +47,7 @@ void ControladoraPessoa::cadastrar() {
         std::getline(std::cin, email);
         std::cout << "Nome (max 10 caracteres): ";
         std::getline(std::cin, nome);
-        std::cout << "Senha (6 caracteres, com maiúscula, minúscula e dígito): ";
+        std::cout << "Senha (6 caracteres, com maiuscula, minuscula e digito): ";
         std::getline(std::cin, senha);
         std::cout << "Papel (DESENVOLVEDOR, MESTRE SCRUM, PROPRIETARIO DE PRODUTO): ";
         std::getline(std::cin, papelStr);
@@ -130,7 +130,7 @@ void ControladoraPessoa::excluir() {
         std::cout << "Email da pessoa a excluir: ";
         std::getline(std::cin, email);
         servico->excluir(email);
-        std::cout << "Pessoa excluída com sucesso!\n";
+        std::cout << "Pessoa excluida com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }

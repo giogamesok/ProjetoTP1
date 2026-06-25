@@ -20,12 +20,12 @@ void ControladoraPlanoSprint::executarMenu() {
         std::cout << "\n--- GERENCIAR PLANOS DE SPRINT ---\n";
         std::cout << "1. Cadastrar sprint\n";
         std::cout << "2. Listar todos\n";
-        std::cout << "3. Consultar por código\n";
+        std::cout << "3. Consultar por codigo\n";
         std::cout << "4. Atualizar\n";
         std::cout << "5. Excluir\n";
         std::cout << "6. Listar sprints de um projeto\n";
-        std::cout << "7. Adicionar história ao sprint\n";
-        std::cout << "8. Remover história do sprint\n";
+        std::cout << "7. Adicionar historia ao sprint\n";
+        std::cout << "8. Remover historia do sprint\n";
         std::cout << "0. Voltar\n";
         std::cout << "Escolha: ";
         std::cin >> opcao;
@@ -50,14 +50,14 @@ void ControladoraPlanoSprint::cadastrar() {
     try {
         std::string codigo, objetivo, codProjeto;
         int capacidade;
-        std::cout << "Código do sprint (2 letras + 3 dígitos): ";
+        std::cout << "Codigo do sprint (2 letras + 3 digitos): ";
         std::getline(std::cin, codigo);
         std::cout << "Objetivo (max 40 caracteres): ";
         std::getline(std::cin, objetivo);
         std::cout << "Capacidade (dias, 1-365): ";
         std::cin >> capacidade;
         std::cin.ignore();
-        std::cout << "Código do projeto: ";
+        std::cout << "Codigo do projeto: ";
         std::getline(std::cin, codProjeto);
 
         Codigo cod(codigo);
@@ -93,14 +93,14 @@ void ControladoraPlanoSprint::listar() {
 void ControladoraPlanoSprint::consultar() {
     try {
         std::string codigo;
-        std::cout << "Código do sprint: ";
+        std::cout << "Codigo do sprint: ";
         std::getline(std::cin, codigo);
         PlanoDeSprint p = servicoPlano->ler(codigo);
         std::cout << "--- DADOS DO SPRINT ---\n";
-        std::cout << "Código: " << p.getCodigo().getValor() << "\n";
+        std::cout << "Codigo: " << p.getCodigo().getValor() << "\n";
         std::cout << "Objetivo: " << p.getObjetivo().getValor() << "\n";
         std::cout << "Capacidade: " << p.getCapacidade().getValor() << " dias\n";
-        std::cout << "Histórias associadas: ";
+        std::cout << "Historias associadas: ";
         auto historias = p.getHistoriasAssociadas();
         if (historias.empty()) {
             std::cout << "nenhuma\n";
@@ -119,7 +119,7 @@ void ControladoraPlanoSprint::atualizar() {
     try {
         std::string codigo, objetivo;
         int capacidade;
-        std::cout << "Código do sprint a atualizar: ";
+        std::cout << "Codigo do sprint a atualizar: ";
         std::getline(std::cin, codigo);
         PlanoDeSprint p = servicoPlano->ler(codigo);
 
@@ -142,10 +142,10 @@ void ControladoraPlanoSprint::atualizar() {
 void ControladoraPlanoSprint::excluir() {
     try {
         std::string codigo;
-        std::cout << "Código do sprint a excluir: ";
+        std::cout << "Codigo do sprint a excluir: ";
         std::getline(std::cin, codigo);
         servicoPlano->excluir(codigo);
-        std::cout << "Plano de sprint excluído com sucesso!\n";
+        std::cout << "Plano de sprint excluido com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
@@ -154,7 +154,7 @@ void ControladoraPlanoSprint::excluir() {
 void ControladoraPlanoSprint::listarPorProjeto() {
     try {
         std::string codProjeto;
-        std::cout << "Código do projeto: ";
+        std::cout << "Codigo do projeto: ";
         std::getline(std::cin, codProjeto);
         auto planos = servicoPlano->listarPorProjeto(codProjeto);
         if (planos.empty()) {
@@ -173,12 +173,12 @@ void ControladoraPlanoSprint::listarPorProjeto() {
 void ControladoraPlanoSprint::adicionarHistoria() {
     try {
         std::string codSprint, codHistoria;
-        std::cout << "Código do sprint: ";
+        std::cout << "Codigo do sprint: ";
         std::getline(std::cin, codSprint);
-        std::cout << "Código da história: ";
+        std::cout << "Codigo da historia: ";
         std::getline(std::cin, codHistoria);
         servicoPlano->adicionarHistoriaAoSprint(codSprint, codHistoria);
-        std::cout << "História adicionada ao sprint com sucesso!\n";
+        std::cout << "Historia adicionada ao sprint com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
@@ -187,12 +187,12 @@ void ControladoraPlanoSprint::adicionarHistoria() {
 void ControladoraPlanoSprint::removerHistoria() {
     try {
         std::string codSprint, codHistoria;
-        std::cout << "Código do sprint: ";
+        std::cout << "Codigo do sprint: ";
         std::getline(std::cin, codSprint);
-        std::cout << "Código da história: ";
+        std::cout << "Codigo da historia: ";
         std::getline(std::cin, codHistoria);
         servicoPlano->removerHistoriaDoSprint(codSprint, codHistoria);
-        std::cout << "História removida do sprint com sucesso!\n";
+        std::cout << "Historia removida do sprint com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }

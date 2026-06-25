@@ -19,10 +19,10 @@ ControladoraHistoria::ControladoraHistoria(IServicoHistoria* sh, IServicoProjeto
 void ControladoraHistoria::executarMenu() {
     int opcao;
     do {
-        std::cout << "\n--- GERENCIAR HISTÓRIAS DE USUÁRIO ---\n";
-        std::cout << "1. Cadastrar história\n";
+        std::cout << "\n--- GERENCIAR HISTORIAS DE USUARIO ---\n";
+        std::cout << "1. Cadastrar historia\n";
         std::cout << "2. Listar todas\n";
-        std::cout << "3. Consultar por código\n";
+        std::cout << "3. Consultar por codigo\n";
         std::cout << "4. Atualizar\n";
         std::cout << "5. Excluir\n";
         std::cout << "6. Listar por projeto\n";
@@ -43,7 +43,7 @@ void ControladoraHistoria::executarMenu() {
             case 7: associarDesenvolvedor(); break;
             case 8: desassociarDesenvolvedor(); break;
             case 0: break;
-            default: std::cout << "Opção inválida!\n";
+            default: std::cout << "Opcao invalida!\n";
         }
     } while (opcao != 0);
 }
@@ -52,13 +52,13 @@ void ControladoraHistoria::cadastrar() {
     try {
         std::string codigo, titulo, papel, acao, valor, prioridade, codProjeto;
         int estimativa;
-        std::cout << "Código (2 letras + 3 dígitos): ";
+        std::cout << "Codigo (2 letras + 3 digitos): ";
         std::getline(std::cin, codigo);
-        std::cout << "Título (max 40 caracteres): ";
+        std::cout << "Titulo (max 40 caracteres): ";
         std::getline(std::cin, titulo);
         std::cout << "Papel (como...): ";
         std::getline(std::cin, papel);
-        std::cout << "Ação (eu quero...): ";
+        std::cout << "Acao (eu quero...): ";
         std::getline(std::cin, acao);
         std::cout << "Valor (para...): ";
         std::getline(std::cin, valor);
@@ -67,7 +67,7 @@ void ControladoraHistoria::cadastrar() {
         std::cin.ignore();
         std::cout << "Prioridade (ALTA, MEDIA, BAIXA): ";
         std::getline(std::cin, prioridade);
-        std::cout << "Código do projeto: ";
+        std::cout << "Codigo do projeto: ";
         std::getline(std::cin, codProjeto);
 
         Codigo cod(codigo);
@@ -78,7 +78,7 @@ void ControladoraHistoria::cadastrar() {
 
         HistoriaDeUsuario historia(cod, tit, pap, ac, val, est, pri, estado);
         servicoHistoria->criar(historia, codProjeto);
-        std::cout << "História cadastrada com sucesso!\n";
+        std::cout << "Historia cadastrada com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
@@ -88,10 +88,10 @@ void ControladoraHistoria::listar() {
     try {
         auto historias = servicoHistoria->listarTodos();
         if (historias.empty()) {
-            std::cout << "Nenhuma história cadastrada.\n";
+            std::cout << "Nenhuma historia cadastrada.\n";
             return;
         }
-        std::cout << "--- HISTÓRIAS CADASTRADAS ---\n";
+        std::cout << "--- HISTORIAS CADASTRADAS ---\n";
         for (const auto& h : historias) {
             std::cout << h.getCodigo().getValor() << " | "
                       << h.getTitulo().getValor() << " | "
@@ -106,14 +106,14 @@ void ControladoraHistoria::listar() {
 void ControladoraHistoria::consultar() {
     try {
         std::string codigo;
-        std::cout << "Código da história: ";
+        std::cout << "Codigo da historia: ";
         std::getline(std::cin, codigo);
         HistoriaDeUsuario h = servicoHistoria->ler(codigo);
-        std::cout << "--- DADOS DA HISTÓRIA ---\n";
-        std::cout << "Código: " << h.getCodigo().getValor() << "\n";
-        std::cout << "Título: " << h.getTitulo().getValor() << "\n";
+        std::cout << "--- DADOS DA HISTORIA ---\n";
+        std::cout << "Codigo: " << h.getCodigo().getValor() << "\n";
+        std::cout << "Titulo: " << h.getTitulo().getValor() << "\n";
         std::cout << "Papel: " << h.getPapel().getValor() << "\n";
-        std::cout << "Ação: " << h.getAcao().getValor() << "\n";
+        std::cout << "Acao: " << h.getAcao().getValor() << "\n";
         std::cout << "Valor: " << h.getValor().getValor() << "\n";
         std::cout << "Estimativa: " << h.getEstimativa().getValor() << "\n";
         std::cout << "Prioridade: " << h.getPrioridade().getValor() << "\n";
@@ -127,11 +127,11 @@ void ControladoraHistoria::atualizar() {
     try {
         std::string codigo, titulo, papel, acao, valor, prioridade, estado;
         int estimativa;
-        std::cout << "Código da história a atualizar: ";
+        std::cout << "Codigo da historia a atualizar: ";
         std::getline(std::cin, codigo);
         HistoriaDeUsuario h = servicoHistoria->ler(codigo);
 
-        std::cout << "Novo título (atual: " << h.getTitulo().getValor() << "): ";
+        std::cout << "Novo titulo (atual: " << h.getTitulo().getValor() << "): ";
         std::getline(std::cin, titulo);
         if (!titulo.empty()) h.setTitulo(Texto(titulo));
 
@@ -139,7 +139,7 @@ void ControladoraHistoria::atualizar() {
         std::getline(std::cin, papel);
         if (!papel.empty()) h.setPapel(Texto(papel));
 
-        std::cout << "Nova ação (atual: " << h.getAcao().getValor() << "): ";
+        std::cout << "Nova acao (atual: " << h.getAcao().getValor() << "): ";
         std::getline(std::cin, acao);
         if (!acao.empty()) h.setAcao(Texto(acao));
 
@@ -161,7 +161,7 @@ void ControladoraHistoria::atualizar() {
         if (!estado.empty()) h.setEstado(Estado(estado));
 
         servicoHistoria->atualizar(h);
-        std::cout << "História atualizada com sucesso!\n";
+        std::cout << "Historia atualizada com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
@@ -170,10 +170,10 @@ void ControladoraHistoria::atualizar() {
 void ControladoraHistoria::excluir() {
     try {
         std::string codigo;
-        std::cout << "Código da história a excluir: ";
+        std::cout << "Codigo da historia a excluir: ";
         std::getline(std::cin, codigo);
         servicoHistoria->excluir(codigo);
-        std::cout << "História excluída com sucesso!\n";
+        std::cout << "Historia excluida com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
@@ -182,14 +182,14 @@ void ControladoraHistoria::excluir() {
 void ControladoraHistoria::listarPorProjeto() {
     try {
         std::string codProjeto;
-        std::cout << "Código do projeto: ";
+        std::cout << "Codigo do projeto: ";
         std::getline(std::cin, codProjeto);
         auto historias = servicoHistoria->listarPorProjeto(codProjeto);
         if (historias.empty()) {
-            std::cout << "Nenhuma história associada a este projeto.\n";
+            std::cout << "Nenhuma historia associada a este projeto.\n";
             return;
         }
-        std::cout << "--- HISTÓRIAS DO PROJETO ---\n";
+        std::cout << "--- HISTORIAS DO PROJETO ---\n";
         for (const auto& h : historias) {
             std::cout << h.getCodigo().getValor() << " - " << h.getTitulo().getValor() << "\n";
         }
@@ -201,7 +201,7 @@ void ControladoraHistoria::listarPorProjeto() {
 void ControladoraHistoria::associarDesenvolvedor() {
     try {
         std::string codHistoria, emailDev;
-        std::cout << "Código da história: ";
+        std::cout << "Codigo da historia: ";
         std::getline(std::cin, codHistoria);
         std::cout << "Email do desenvolvedor: ";
         std::getline(std::cin, emailDev);
@@ -215,7 +215,7 @@ void ControladoraHistoria::associarDesenvolvedor() {
 void ControladoraHistoria::desassociarDesenvolvedor() {
     try {
         std::string codHistoria;
-        std::cout << "Código da história: ";
+        std::cout << "Codigo da historia: ";
         std::getline(std::cin, codHistoria);
         servicoHistoria->desassociarDesenvolvedor(codHistoria);
         std::cout << "Desenvolvedor desassociado com sucesso!\n";

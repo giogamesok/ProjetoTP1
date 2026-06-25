@@ -3,7 +3,7 @@
 
 Senha::Senha() : valor("") {}
 
-Senha::Senha(const std::string& v) {   // const ref
+Senha::Senha(const std::string& v) {
     setValor(v);
 }
 

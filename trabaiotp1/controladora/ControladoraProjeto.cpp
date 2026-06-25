@@ -20,7 +20,7 @@ void ControladoraProjeto::executarMenu() {
         std::cout << "\n--- GERENCIAR PROJETOS ---\n";
         std::cout << "1. Cadastrar projeto\n";
         std::cout << "2. Listar todos\n";
-        std::cout << "3. Consultar por código\n";
+        std::cout << "3. Consultar por codigo\n";
         std::cout << "4. Atualizar\n";
         std::cout << "5. Excluir\n";
         std::cout << "6. Listar projetos por pessoa\n";
@@ -37,7 +37,7 @@ void ControladoraProjeto::executarMenu() {
             case 5: excluir(); break;
             case 6: listarPorPessoa(); break;
             case 0: break;
-            default: std::cout << "Opção inválida!\n";
+            default: std::cout << "Opcao invalida!\n";
         }
     } while (opcao != 0);
 }
@@ -45,13 +45,13 @@ void ControladoraProjeto::executarMenu() {
 void ControladoraProjeto::cadastrar() {
     try {
         std::string codigo, nome, inicio, termino, emailSM;
-        std::cout << "Código (2 letras + 3 dígitos): ";
+        std::cout << "Codigo (2 letras + 3 digitos): ";
         std::getline(std::cin, codigo);
         std::cout << "Nome (max 10 caracteres): ";
         std::getline(std::cin, nome);
-        std::cout << "Data de início (DD/MM/AAAA): ";
+        std::cout << "Data de inicio (DD/MM/AAAA): ";
         std::getline(std::cin, inicio);
-        std::cout << "Data de término (DD/MM/AAAA): ";
+        std::cout << "Data de termino (DD/MM/AAAA): ";
         std::getline(std::cin, termino);
         std::cout << "Email do Scrum Master: ";
         std::getline(std::cin, emailSM);
@@ -93,14 +93,14 @@ void ControladoraProjeto::listar() {
 void ControladoraProjeto::consultar() {
     try {
         std::string codigo;
-        std::cout << "Código do projeto: ";
+        std::cout << "Codigo do projeto: ";
         std::getline(std::cin, codigo);
         Projeto p = servicoProjeto->ler(codigo);
         std::cout << "--- DADOS DO PROJETO ---\n";
-        std::cout << "Código: " << p.getCodigo().getValor() << "\n";
+        std::cout << "Codigo: " << p.getCodigo().getValor() << "\n";
         std::cout << "Nome: " << p.getNome().getValor() << "\n";
-        std::cout << "Início: " << p.getInicio().getValor() << "\n";
-        std::cout << "Término: " << p.getTermino().getValor() << "\n";
+        std::cout << "Inicio: " << p.getInicio().getValor() << "\n";
+        std::cout << "Termino: " << p.getTermino().getValor() << "\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
@@ -109,7 +109,7 @@ void ControladoraProjeto::consultar() {
 void ControladoraProjeto::atualizar() {
     try {
         std::string codigo, nome, inicio, termino;
-        std::cout << "Código do projeto a atualizar: ";
+        std::cout << "Codigo do projeto a atualizar: ";
         std::getline(std::cin, codigo);
         Projeto p = servicoProjeto->ler(codigo);
 
@@ -117,11 +117,11 @@ void ControladoraProjeto::atualizar() {
         std::getline(std::cin, nome);
         if (!nome.empty()) p.setNome(Nome(nome));
 
-        std::cout << "Nova data de início (atual: " << p.getInicio().getValor() << "): ";
+        std::cout << "Nova data de inicio (atual: " << p.getInicio().getValor() << "): ";
         std::getline(std::cin, inicio);
         if (!inicio.empty()) p.setInicio(Data(inicio));
 
-        std::cout << "Nova data de término (atual: " << p.getTermino().getValor() << "): ";
+        std::cout << "Nova data de termino (atual: " << p.getTermino().getValor() << "): ";
         std::getline(std::cin, termino);
         if (!termino.empty()) p.setTermino(Data(termino));
 
@@ -135,10 +135,10 @@ void ControladoraProjeto::atualizar() {
 void ControladoraProjeto::excluir() {
     try {
         std::string codigo;
-        std::cout << "Código do projeto a excluir: ";
+        std::cout << "Codigo do projeto a excluir: ";
         std::getline(std::cin, codigo);
         servicoProjeto->excluir(codigo);
-        std::cout << "Projeto excluído com sucesso!\n";
+        std::cout << "Projeto excluido com sucesso!\n";
     } catch (const std::exception& e) {
         std::cout << "Erro: " << e.what() << std::endl;
     }
