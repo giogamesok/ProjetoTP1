@@ -1,57 +1,38 @@
 #include "senha.hpp"
+#include <cctype>
 
-void Senha::validar(string valor) {
-    //a senha deve conter 6 (seis) caracteres.
-    if (static_cast<int>(valor.length()) != TAMANHO) {
-        throw invalid_argument("Senha invalida. Deve conter exatamente 6 caracteres.");
-    }
+Senha::Senha() : valor("") {}
 
-    bool temMinuscula = false;
-    bool temMaiuscula = false;
-    bool temDigito    = false;
-
-    for (int i = 0; i < TAMANHO; i++) {
-        char atual = valor[i];
-
-        bool ehMinuscula = (atual >= 'a' && atual <= 'z');
-        bool ehMaiuscula = (atual >= 'A' && atual <= 'Z');
-        bool ehLetra     = ehMinuscula || ehMaiuscula;
-        bool ehDigito    = (atual >= '0' && atual <= '9');
-
-        //cada caractere deve ser letra (a-z, A-Z) ou digito (0-9).
-        if (!ehLetra && !ehDigito) {
-            throw invalid_argument("Senha invalida. Use apenas letras e digitos.");
-        }
-
-        if (ehMinuscula) temMinuscula = true;
-        if (ehMaiuscula) temMaiuscula = true;
-        if (ehDigito)    temDigito    = true;
-
-        //letra nao pode ser seguida por letra; digito nao pode ser seguido por digito.
-        if (i > 0) {
-            char anterior = valor[i - 1];
-
-            bool anteriorLetra  = (anterior >= 'a' && anterior <= 'z') ||
-                                  (anterior >= 'A' && anterior <= 'Z');
-            bool anteriorDigito = (anterior >= '0' && anterior <= '9');
-
-            if (anteriorLetra && ehLetra) {
-                throw invalid_argument("Senha invalida. Letra nao pode ser seguida por letra.");
-            }
-            if (anteriorDigito && ehDigito) {
-                throw invalid_argument("Senha invalida. Digito nao pode ser seguido por digito.");
-            }
-        }
-    }
-
-    //ao menos uma minuscula, uma maiuscula e um digito.
-    if (!temMinuscula || !temMaiuscula || !temDigito) {
-        throw invalid_argument("Senha invalida. Deve conter ao menos uma letra minuscula, "
-                               "uma letra maiuscula e um digito.");
-    }
+Senha::Senha(const std::string& v) {   // const ref
+    setValor(v);
 }
 
-void Senha::setValor(string valor) {
-    validar(valor);
-    this->valor = valor;
+std::string Senha::getValor() const {
+    return valor;
+}
+
+void Senha::setValor(const std::string& v) {
+    if (!validar(v)) {
+        throw std::invalid_argument("Senha invalida: 6 caracteres, letras e digitos, sem repeticoes de tipo.");
+    }
+    valor = v;
+}
+
+bool Senha::validar(const std::string& v) {
+    if (v.length() != 6) return false;
+    bool temMaiuscula = false, temMinuscula = false, temDigito = false;
+    for (size_t i = 0; i < v.length(); ++i) {
+        char c = v[i];
+        if (std::isupper(static_cast<unsigned char>(c))) temMaiuscula = true;
+        else if (std::islower(static_cast<unsigned char>(c))) temMinuscula = true;
+        else if (std::isdigit(static_cast<unsigned char>(c))) temDigito = true;
+        else return false;
+        if (i > 0) {
+            bool antLetra = std::isalpha(v[i-1]);
+            bool atualLetra = std::isalpha(c);
+            if (antLetra && atualLetra) return false;
+            if (!antLetra && !atualLetra) return false;
+        }
+    }
+    return temMaiuscula && temMinuscula && temDigito;
 }

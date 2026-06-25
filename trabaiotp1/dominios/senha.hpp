@@ -20,16 +20,14 @@ using namespace std;
  */
 class Senha {
 private:
-    static const int TAMANHO = 6;
-
-    string valor;
+    std::string valor;
 
     /**
      * @brief Verifica se o valor informado atende a todas as regras de formato da senha.
      * @param valor Texto a ser validado.
      * @throw invalid_argument Se o valor nao respeitar o formato especificado.
      */
-    void validar(string valor);
+
 
 public:
     /**
@@ -41,17 +39,17 @@ public:
      *        com ao menos uma minuscula, uma maiuscula e um digito).
      * @throw invalid_argument Se o valor estiver em formato invalido.
      */
-    void setValor(string valor);
+   Senha();
+    Senha(const std::string& valor);  // necessário
+    std::string getValor() const;
+    void setValor(const std::string& novoValor);
+    static bool validar(const std::string& valor);
 
     /**
      * @brief Recupera a senha armazenada no objeto.
      * @return Texto correspondente a senha atual.
      */
-    string getValor() const;
-};
 
-inline string Senha::getValor() const {
-    return valor;
-}
+};
 
 #endif // SENHA_HPP_INCLUDED

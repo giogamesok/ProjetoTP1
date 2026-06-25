@@ -1,7 +1,7 @@
 #ifndef CONTAINER_HISTORIA_HPP
 #define CONTAINER_HISTORIA_HPP
 
-#include "HistoriaDeUsuario.hpp"
+#include "historia_de_usuario.hpp"
 #include <map>
 #include <string>
 #include <vector>

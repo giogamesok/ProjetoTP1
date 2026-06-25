@@ -1,5 +1,8 @@
-#include <iostream>
-#include <limits>
+/**
+ * @file main.cpp
+ * @brief Ponto de entrada do sistema.
+ */
+
 #include "ControladoraPessoa.hpp"
 #include "ControladoraProjeto.hpp"
 #include "ControladoraHistoria.hpp"
@@ -12,21 +15,25 @@
 #include "ContainerProjeto.hpp"
 #include "ContainerHistoria.hpp"
 #include "ContainerPlanoSprint.hpp"
+#include <iostream>
+#include <limits>
 
 using namespace std;
 
 int main() {
+    // Contêineres
     ContainerPessoa containerPessoa;
     ContainerProjeto containerProjeto;
     ContainerHistoria containerHistoria;
     ContainerPlanoSprint containerPlanoSprint;
 
-
+    // Serviços
     ServicoPessoa servicoPessoa(&containerPessoa);
     ServicoProjeto servicoProjeto(&containerProjeto, &containerPessoa);
     ServicoHistoria servicoHistoria(&containerHistoria, &containerProjeto, &containerPessoa);
     ServicoPlanoSprint servicoPlanoSprint(&containerPlanoSprint, &containerProjeto, &containerHistoria);
 
+    // Controladoras
     ControladoraPessoa ctrlPessoa(&servicoPessoa);
     ControladoraProjeto ctrlProjeto(&servicoProjeto, &servicoPessoa);
     ControladoraHistoria ctrlHistoria(&servicoHistoria, &servicoProjeto, &servicoPessoa);

@@ -13,6 +13,12 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="container" />
+					<Add directory="controladora" />
+					<Add directory="dominios" />
+					<Add directory="entidades" />
+					<Add directory="Interfaces" />
+					<Add directory="servico" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,6 +38,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Interfaces/IServicoHistoria.hpp" />
+		<Unit filename="Interfaces/IServicoPessoa.hpp" />
+		<Unit filename="Interfaces/IServicoPlanoSprint.hpp" />
+		<Unit filename="Interfaces/IServicoProjeto.hpp" />
+		<Unit filename="container/ContainerHistoria.cpp" />
+		<Unit filename="container/ContainerHistoria.hpp" />
+		<Unit filename="container/ContainerPessoa.cpp" />
+		<Unit filename="container/ContainerPessoa.hpp" />
+		<Unit filename="container/ContainerPlanoSprint.cpp" />
+		<Unit filename="container/ContainerPlanoSprint.hpp" />
+		<Unit filename="container/ContainerProjeto.cpp" />
+		<Unit filename="container/ContainerProjeto.hpp" />
+		<Unit filename="controladora/ControladoraHistoria.cpp" />
+		<Unit filename="controladora/ControladoraHistoria.hpp" />
+		<Unit filename="controladora/ControladoraPessoa.cpp" />
+		<Unit filename="controladora/ControladoraPessoa.hpp" />
+		<Unit filename="controladora/ControladoraPlanoSprint.cpp" />
+		<Unit filename="controladora/ControladoraPlanoSprint.hpp" />
+		<Unit filename="controladora/ControladoraProjeto.cpp" />
+		<Unit filename="controladora/ControladoraProjeto.hpp" />
 		<Unit filename="dominios/EMAIL.cpp" />
 		<Unit filename="dominios/EMAIL.hpp" />
 		<Unit filename="dominios/codigo.cpp" />
@@ -40,7 +66,6 @@
 		<Unit filename="dominios/data.hpp" />
 		<Unit filename="dominios/estado.cpp" />
 		<Unit filename="dominios/estado.hpp" />
-		<Unit filename="dominios/hmm.hpp" />
 		<Unit filename="dominios/nome.cpp" />
 		<Unit filename="dominios/nome.hpp" />
 		<Unit filename="dominios/papel.cpp" />
@@ -62,6 +87,14 @@
 		<Unit filename="entidades/projeto.cpp" />
 		<Unit filename="entidades/projeto.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="servico/ServicoHistoria.cpp" />
+		<Unit filename="servico/ServicoHistoria.hpp" />
+		<Unit filename="servico/ServicoPessoa.cpp" />
+		<Unit filename="servico/ServicoPessoa.hpp" />
+		<Unit filename="servico/ServicoPlanoSprint.cpp" />
+		<Unit filename="servico/ServicoPlanoSprint.hpp" />
+		<Unit filename="servico/ServicoProjeto.cpp" />
+		<Unit filename="servico/ServicoProjeto.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

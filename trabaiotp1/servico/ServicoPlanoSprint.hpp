@@ -1,3 +1,8 @@
+/**
+ * @file main.cpp
+ * @brief Ponto de entrada do sistema – integra todas as camadas.
+ */
+
 #ifndef SERVICO_PLANO_SPRINT_HPP
 #define SERVICO_PLANO_SPRINT_HPP
 
@@ -6,14 +11,17 @@
 #include "ContainerProjeto.hpp"
 #include "ContainerHistoria.hpp"
 
+/**
+ * @class ServicoPlanoSprint
+ * @brief Serviço para PlanoDeSprint.
+ */
 class ServicoPlanoSprint : public IServicoPlanoSprint {
 private:
-    ContainerPlanoSprint* containerSprint;
+    ContainerPlanoSprint* containerPlano;
     ContainerProjeto* containerProjeto;
     ContainerHistoria* containerHistoria;
-    std::map<std::string, std::string> sprintProjeto;
 public:
-    ServicoPlanoSprint(ContainerPlanoSprint* cs, ContainerProjeto* cp, ContainerHistoria* ch);
+    ServicoPlanoSprint(ContainerPlanoSprint* cp, ContainerProjeto* cproj, ContainerHistoria* chist);
     void criar(const PlanoDeSprint& plano, const std::string& codigoProjeto) override;
     PlanoDeSprint ler(const std::string& codigo) const override;
     void atualizar(const PlanoDeSprint& plano) override;
@@ -22,7 +30,6 @@ public:
     std::vector<PlanoDeSprint> listarPorProjeto(const std::string& codigoProjeto) const override;
     void adicionarHistoriaAoSprint(const std::string& codigoSprint, const std::string& codigoHistoria) override;
     void removerHistoriaDoSprint(const std::string& codigoSprint, const std::string& codigoHistoria) override;
-    bool verificarCapacidadeTotalProjeto(const std::string& codigoProjeto) const;
 };
 
 #endif

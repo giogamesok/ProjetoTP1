@@ -4,10 +4,10 @@
  */
 
 #include "ControladoraPlanoSprint.hpp"
-#include "PlanoDeSprint.hpp"
-#include "Codigo.hpp"
-#include "Texto.hpp"
-#include "Tempo.hpp"
+#include "plano_de_sprint.hpp"
+#include "codigo.hpp"
+#include "texto.hpp"
+#include "tempo.hpp"
 #include <iostream>
 #include <limits>
 

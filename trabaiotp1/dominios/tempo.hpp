@@ -1,18 +1,28 @@
-#ifndef TEMPO_HPP_INCLUDED
-#define TEMPO_HPP_INCLUDED
+/**
+ * @file Tempo.hpp
+ * @brief Definição da classe de domínio Tempo.
+ */
 
-#include <string>
+#ifndef TEMPO_HPP
+#define TEMPO_HPP
+
 #include <stdexcept>
 
-class Texto {
+/**
+ * @class Tempo
+ * @brief Representa uma quantidade de dias (estimativa ou capacidade).
+ * @details Valor inteiro entre 1 e 365.
+ */
+class Tempo {
 private:
-    std::string valor;
-    void validar(std::string);
+    int valor;
+
 public:
-    void setValor(std::string);
-    std::string getValor() const;
+    Tempo();
+    Tempo(int valor);
+    int getValor() const;
+    void setValor(int novoValor);
+    static bool validar(int valor);
 };
 
-#endif // TEXTO_HPP_INCLUDED
-
-#endif // TEMPO_HPP_INCLUDED
+#endif

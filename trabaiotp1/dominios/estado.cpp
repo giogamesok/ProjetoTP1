@@ -1,12 +1,22 @@
 #include "estado.hpp"
 
-void Estado::validar(string valor) {
-    if (valor != "A FAZER" && valor != "FAZENDO" && valor != "FEITO") {
-        throw invalid_argument("Estado invalido. Valores aceitos: A FAZER, FAZENDO, FEITO.");
-    }
+Estado::Estado() : valor("A FAZER") {}
+
+Estado::Estado(const std::string& v) {
+    setValor(v);
 }
 
-void Estado::setValor(string valor) {
-    validar(valor);
-    this->valor = valor;
+std::string Estado::getValor() const {
+    return valor;
+}
+
+void Estado::setValor(const std::string& v) {
+    if (!validar(v)) {
+        throw std::invalid_argument("Estado deve ser A FAZER, FAZENDO ou FEITO.");
+    }
+    valor = v;
+}
+
+bool Estado::validar(const std::string& v) {   // retorna bool, igual à declaração
+    return (v == "A FAZER" || v == "FAZENDO" || v == "FEITO");
 }

@@ -4,12 +4,12 @@
  */
 
 #include "ControladoraHistoria.hpp"
-#include "HistoriaDeUsuario.hpp"
-#include "Codigo.hpp"
-#include "Texto.hpp"
-#include "Tempo.hpp"
-#include "Prioridade.hpp"
-#include "Estado.hpp"
+#include "historia_de_usuario.hpp"
+#include "codigo.hpp"
+#include "texto.hpp"
+#include "tempo.hpp"
+#include "prioridade.hpp"
+#include "estado.hpp"
 #include <iostream>
 #include <limits>
 
